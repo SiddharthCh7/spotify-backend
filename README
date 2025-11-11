@@ -1,0 +1,41 @@
+# Spotify Backend
+
+A Node.js backend service inspired by Spotify, providing APIs for music streaming features such as song search, playlist creation, and user management. Built for integration with frontend clients and music streaming UIs.
+
+**Live URL:**  
+https://spotify-frontend-pied.vercel.app/  
+
+
+**Frontend of this project can be found at:**
+https://github.com/SiddharthCh7/Spotify-frontend
+
+## Features
+
+- Search songs and view details
+- Create and manage playlists
+- Store and query music data efficiently
+- User authentication and playlist management
+
+
+## Data Storage Architecture
+
+- **Songs and albums metadata** are stored in a MongoDB database for fast search, filtering, and management.
+- **Song files** are stored in an AWS S3 bucket for scalable, reliable delivery and cost-efficient storage.
+- **Secure access:** To prevent direct access and authorization issues, the backend generates a time-limited signed URL for users to stream or download songs, protecting raw S3 links and maintaining access control.
+
+
+## Tech Stack
+
+- Node.js
+- Express.js
+- React.js
+- JavaScript (100%)
+- MongoDB for data storage
+- S3 for media storage
+
+## Future Scope
+
+- **ML-based recommendations**: Leverage user data and listening history to deliver personalized playlists and song suggestions.
+- **CDN implementation**: Integrate a Content Delivery Network (CDN) for faster, geo-distributed song delivery, reducing latency and load on S3 for popular content[web:18].
+- **Additional metadata (genres, popularity metrics, lyrics)**
+- **Advanced search, podcast support, and analytics dashboards**

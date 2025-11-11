@@ -8,8 +8,8 @@ export const getStats = async (req, res, next) => {
     try {
         const [ totalSongs, totalAlbums, totalUsers, uniqueArtists ] = await Promise.all([
             Song.countDocuments(),
-            User.countDocuments(),
             Album.countDocuments(),
+            User.countDocuments(),
 
             Song.aggregate([
                 {
@@ -28,6 +28,8 @@ export const getStats = async (req, res, next) => {
                 },
             ]),
         ]);
+
+        console.log("albums:",totalAlbums);
 
         res.status(200).json({
             totalAlbums,
